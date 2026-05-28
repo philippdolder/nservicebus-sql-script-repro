@@ -13,8 +13,8 @@ This is as described in https://docs.particular.net/persistence/sql/controlling-
 ## Reproduce
 - clone the repo `https://github.com/philippdolder/nservicebus-sql-script-repro`
 - start a terminal and navigate to the repo root
-- execute `git ls-files --eol | grep ".sql$"` -> you will see all line endings are `lf`
+- execute `git ls-files --eol | grep ".sql$"` -> you will see all line endings are `i/lf w/lf`. `i` is the index (e.g. what's in the repo), `w` is the working copy state.
 - execute `dotnet build`
 - execute `git status` to see all .sql files are modified
-- execute `git ls-files --eol | grep ".sql$"` again -> you will see the `Outbox*.sql` files have `crlf` and `Sagas/*.sql` files have `mixed` line endings now.
+- execute `git ls-files --eol | grep ".sql$"` again -> you will see the `Outbox*.sql` files have `w/crlf` and `Sagas/*.sql` files have `w/mixed` line endings now.
 - you can visualize line endings with e.g. `cat -vET Service/nsb_scripts/MsSqlServer/Sagas/DummySaga_Create.sql` -> there is a mix of `lf` ($) and `crlf` (^M$).
