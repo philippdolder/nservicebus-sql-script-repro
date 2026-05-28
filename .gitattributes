@@ -1,0 +1,2 @@
+# Let git figure out if unspecified file types are text or binary
+* text=auto

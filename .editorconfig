@@ -1,0 +1,475 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = crlf
+
+indent_style = space
+indent_size = 4
+
+trim_trailing_whitespace = true
+insert_final_newline = false
+
+max_line_length = 140
+
+# Microsoft .NET properties
+
+# capitalizaiton styles
+dotnet_naming_style.lower_camel_case_style.capitalization = camel_case
+dotnet_naming_style.upper_camel_case_style.capitalization = pascal_case
+
+# local constants
+dotnet_naming_symbols.local_constants_symbols.applicable_accessibilities = *
+dotnet_naming_symbols.local_constants_symbols.applicable_kinds = local
+dotnet_naming_symbols.local_constants_symbols.required_modifiers = const
+dotnet_naming_rule.local_constants_rule.severity = warning
+dotnet_naming_rule.local_constants_rule.style = upper_camel_case_style
+dotnet_naming_rule.local_constants_rule.symbols = local_constants_symbols
+
+# private const fields
+dotnet_naming_symbols.private_constants_symbols.applicable_accessibilities = private
+dotnet_naming_symbols.private_constants_symbols.applicable_kinds = field
+dotnet_naming_symbols.private_constants_symbols.required_modifiers = const
+dotnet_naming_rule.private_constants_rule.severity = warning
+dotnet_naming_rule.private_constants_rule.style = upper_camel_case_style
+dotnet_naming_rule.private_constants_rule.symbols = private_constants_symbols
+
+# private instance fields
+dotnet_naming_symbols.private_instance_fields_symbols.applicable_accessibilities = private
+dotnet_naming_symbols.private_instance_fields_symbols.applicable_kinds = field
+dotnet_naming_rule.private_instance_fields_rule.severity = warning
+dotnet_naming_rule.private_instance_fields_rule.style = lower_camel_case_style
+dotnet_naming_rule.private_instance_fields_rule.symbols = private_instance_fields_symbols
+
+# private static fields
+dotnet_naming_rule.private_static_fields_rule.severity = warning
+dotnet_naming_rule.private_static_fields_rule.style = lower_camel_case_style
+dotnet_naming_rule.private_static_fields_rule.symbols = private_static_fields_symbols
+dotnet_naming_symbols.private_static_fields_symbols.applicable_accessibilities = private
+dotnet_naming_symbols.private_static_fields_symbols.applicable_kinds = field
+dotnet_naming_symbols.private_static_fields_symbols.required_modifiers = static
+
+# private static readonly fields
+dotnet_naming_symbols.private_static_readonly_symbols.applicable_accessibilities = private
+dotnet_naming_symbols.private_static_readonly_symbols.applicable_kinds = field
+dotnet_naming_symbols.private_static_readonly_symbols.required_modifiers = static, readonly
+dotnet_naming_rule.private_static_readonly_rule.severity = warning
+dotnet_naming_rule.private_static_readonly_rule.style = upper_camel_case_style
+dotnet_naming_rule.private_static_readonly_rule.symbols = private_static_readonly_symbols
+
+# enforce this
+dotnet_style_qualification_for_event = true:warning
+dotnet_style_qualification_for_field = true:warning
+dotnet_style_qualification_for_method = true:warning
+dotnet_style_qualification_for_property = true:warning
+
+# prefer language keyword over type name
+dotnet_style_predefined_type_for_locals_parameters_members = true:warning
+dotnet_style_predefined_type_for_member_access = true:warning
+
+# modifier
+csharp_preferred_modifier_order = public, private, protected, internal, static, extern, new, virtual, abstract, sealed, override, readonly, unsafe, volatile, async:warning
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:warning
+dotnet_style_readonly_field = true:suggestion
+
+# parentheses style
+dotnet_style_parentheses_in_arithmetic_binary_operators = never_if_unnecessary:suggestion
+dotnet_style_parentheses_in_other_binary_operators = never_if_unnecessary:suggestion
+dotnet_style_parentheses_in_relational_binary_operators = never_if_unnecessary:suggestion
+dotnet_style_parentheses_in_other_operators = never_if_unnecessary:suggestion
+
+# Expression-level
+dotnet_style_object_initializer = true:suggestion
+dotnet_style_collection_initializer = true:suggestion
+dotnet_style_explicit_tuple_names = true:warning
+dotnet_style_prefer_inferred_tuple_names = false:suggestion
+dotnet_style_prefer_inferred_anonymous_type_member_names = false:suggestion
+dotnet_style_prefer_auto_properties = true:warning
+dotnet_style_prefer_conditional_expression_over_assignment = true:suggestion
+dotnet_style_prefer_conditional_expression_over_return = true:suggestion
+dotnet_style_prefer_compound_assignment = true:suggestion
+
+# null checking
+dotnet_style_coalesce_expression = true:suggestion
+dotnet_style_null_propagation = false:suggestion
+dotnet_style_prefer_is_null_check_over_reference_equality_method = true:suggestion
+csharp_style_throw_expression = true:suggestion
+csharp_style_conditional_delegate_call = true:suggestion
+
+# code quality
+dotnet_code_quality_unused_parameters = all:warning
+
+# var style
+csharp_style_var_for_built_in_types = false:warning
+csharp_style_var_when_type_is_apparent = true:warning
+csharp_style_var_elsewhere = false:warning
+resharper_for_built_in_types = use_explicit_type
+resharper_for_simple_types = use_var_when_evident
+resharper_for_other_types = use_var_when_evident
+
+# expression bodied members
+csharp_style_expression_bodied_methods = when_on_single_line:none
+csharp_style_expression_bodied_constructors = when_on_single_line:none
+csharp_style_expression_bodied_operators = when_on_single_line:none
+csharp_style_expression_bodied_properties = when_on_single_line:none
+csharp_style_expression_bodied_indexers = when_on_single_line:none
+csharp_style_expression_bodied_accessors = when_on_single_line:none
+csharp_style_expression_bodied_lambdas = true:suggestion
+csharp_style_expression_bodied_local_functions = true:suggestion
+
+# pattern matching
+csharp_style_pattern_matching_over_is_with_cast_check = true:suggestion
+csharp_style_pattern_matching_over_as_with_null_check = true:suggestion
+csharp_style_inlined_variable_declaration = true:suggestion
+
+# expression level
+csharp_prefer_simple_default_expression = true:suggestion
+
+# code block
+csharp_prefer_braces = true:warning
+csharp_style_unused_value_expression_statement_preference = discard_variable:suggestion
+csharp_style_unused_value_assignment_preference = discard_variable:suggestion
+
+# index preferences
+csharp_style_prefer_index_operator = false:suggestion
+csharp_style_prefer_range_operator = false:suggestion
+
+# miscellaneous
+csharp_style_deconstructed_variable_declaration = true:suggestion
+csharp_style_pattern_local_over_anonymous_function = true:suggestion
+csharp_prefer_static_local_function = true:suggestion
+
+# namespace and usings
+csharp_using_directive_placement = inside_namespace:warning
+csharp_prefer_simple_using_statement = true:suggestion
+csharp_style_prefer_switch_expression = true:suggestion
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = false
+csharp_style_namespace_declarations = file_scoped:warning
+
+# newline
+csharp_new_line_before_open_brace = all
+csharp_new_line_before_else = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
+csharp_new_line_before_members_in_object_initializers = false
+csharp_new_line_before_members_in_anonymous_types = false
+csharp_new_line_between_query_expression_clauses = true
+csharp_place_type_constraints_on_same_line = false
+csharp_place_constructor_initializer_on_same_line = false
+csharp_place_single_method_argument_lambda_on_same_line = false
+
+# indentation
+csharp_indent_block_contents = true
+csharp_indent_braces = false
+csharp_indent_case_contents_when_block = false
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = true
+
+# spacing
+csharp_space_after_cast = false
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_space_before_colon_in_inheritance_clause = true
+csharp_space_after_colon_in_inheritance_clause = true
+csharp_space_around_binary_operators = before_and_after
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+csharp_space_between_method_declaration_empty_parameter_list_parentheses = false
+csharp_space_between_method_declaration_name_and_open_parenthesis = false
+csharp_space_between_method_call_parameter_list_parentheses = false
+csharp_space_between_method_call_empty_parameter_list_parentheses = false
+csharp_space_between_method_call_name_and_opening_parenthesis = false
+csharp_space_after_comma = true
+csharp_space_before_comma = false
+csharp_space_after_dot = false
+csharp_space_before_dot = false
+csharp_space_after_semicolon_in_for_statement = true
+csharp_space_before_semicolon_in_for_statement = false
+csharp_space_around_declaration_statements = false
+csharp_space_before_open_square_brackets = false
+csharp_space_between_empty_square_brackets = false
+csharp_space_between_square_brackets = false
+
+# wrap
+csharp_preserve_single_line_statements = false
+csharp_preserve_single_line_blocks = true
+csharp_wrap_before_first_type_parameter_constraint = true
+csharp_wrap_multiple_type_parameter_constraints_style = chop_always
+wrap_verbatim_interpolated_strings = no_wrap
+
+# braces
+csharp_parentheses_group_non_obvious_operations = conditional, arithmetic, relational
+
+# Rider / Resharper specific settings
+accessor_declaration_braces = next_line
+accessor_owner_declaration_braces = next_line
+other_braces = next_line
+accessor_owner_body = expression_body
+add_imports_to_deepest_scope = true
+align_linq_query = true
+align_multiline_argument = true
+align_multiline_extends_list = true
+allow_alias = false
+can_use_global_alias = true
+remove_blank_lines_near_braces = true
+anonymous_method_declaration_braces = next_line
+blank_lines_around_field = 0
+blank_lines_around_invocable = 1
+blank_lines_around_local_method = 1
+blank_lines_around_multiline_case_section = 1
+blank_lines_around_property = 1
+blank_lines_around_single_line_auto_property = 1
+blank_lines_around_single_line_field = 0
+blank_lines_around_single_line_invocable = 1
+blank_lines_after_block_statements = 1
+blank_lines_after_using_list = 1
+blank_lines_around_auto_property = 1
+blank_lines_around_block_case_section = 1
+blank_lines_around_single_line_local_method = 1
+blank_lines_around_single_line_property = 1
+blank_lines_around_type = 1
+blank_lines_between_using_groups = 0
+blank_lines_before_single_line_comment = 1
+
+place_attribute_on_same_line = never
+remove_this_qualifier = false
+
+default_private_modifier = explicit
+csharp_default_internal_modifier = explicit
+empty_block_style = multiline
+space_within_single_line_array_initializer_braces = true
+initializer_braces = next_line
+space_before_singleline_accessorholder = true
+space_in_singleline_accessorholder = true
+space_between_accessors_in_singleline_property = true
+extra_spaces = remove_all
+
+qualified_using_at_nested_scope = true
+keep_blank_lines_in_code = 1
+keep_blank_lines_in_declarations = 1
+max_blank_lines_between_tags = 0
+keep_existing_arrangement = true
+keep_existing_attribute_arrangement = false
+keep_existing_declaration_parens_arrangement = false
+keep_existing_declaration_block_arrangement = false
+keep_existing_enum_arrangement = false
+keep_existing_embedded_block_arrangement = false
+place_simple_embedded_block_on_same_line = false
+place_simple_anonymousmethod_on_single_line = false
+keep_existing_switch_expression_arrangement = false
+keep_existing_initializer_arrangement = false
+keep_existing_invocation_parens_arrangement = false
+
+resharper_member_can_be_internal_highlighting = do_not_show
+resharper_return_type_can_be_enumerable_global_highlighting = do_not_show
+resharper_return_type_can_be_enumerable_local_highlighting = do_not_show
+resharper_parameter_type_can_be_enumerable_local_highlighting = do_not_show
+resharper_class_can_be_sealed_global_highlighting = do_not_show
+resharper_class_can_be_sealed_local_highlighting = do_not_show
+resharper_internal_or_private_member_not_documented_highlighting = do_not_show
+resharper_introduce_optional_parameters_global_highlighting = do_not_show
+resharper_introduce_optional_parameters_local_highlighting = do_not_show
+resharper_redundant_anonymous_type_property_name_highlighting = do_not_show
+resharper_arrange_type_member_modifiers_highlighting = warning
+resharper_arrange_type_modifiers_highlighting = warning
+resharper_arrange_object_creation_when_type_evident_highlighting = none
+resharper_convert_to_constant_local_highlighting = suggestion
+resharper_convert_constructor_to_member_initializers_highlighting = do_not_show
+resharper_convert_to_primary_constructor_highlighting = none
+
+wrap_after_declaration_lpar = true
+wrap_after_dot_in_method_calls = false
+wrap_after_invocation_lpar = true
+wrap_before_ternary_opsigns = true
+wrap_before_binary_opsign = true
+wrap_before_binary_pattern_op = true
+wrap_before_linq_expression = true
+wrap_array_initializer_style = chop_if_long
+wrap_arguments_style = chop_if_long
+wrap_object_and_collection_initializer_style = chop_if_long
+wrap_parameters_style = chop_if_long
+wrap_ternary_expr_style = chop_if_long
+wrap_chained_method_calls = chop_if_long
+resharper_move_local_function_after_jump_statement_highlighting = none
+
+# this part is used for making code inspections happy
+resharper_es6_feature_highlighting = none
+resharper_css_browser_compatibility_highlighting = none
+resharper_css_not_resolved_highlighting = none
+resharper_hex_color_value_with_alpha_highlighting = hint
+resharper_requires_fallback_color_highlighting = hint
+resharper_css_not_resolved_highlighting = hint
+resharper_syntax_is_not_allowed_highlighting = hint
+resharper_variable_hides_outer_variable_highlighting = warning
+resharper_declaration_hides_highlighting = warning
+resharper_local_variable_hides_member_highlighting = none
+resharper_parameter_hides_member_highlighting = hint
+
+# customize Meziantou.Analyzer
+dotnet_diagnostic.MA0001.severity = none
+dotnet_diagnostic.MA0002.severity = none
+dotnet_diagnostic.MA0003.severity = none
+dotnet_diagnostic.MA0004.severity = none
+dotnet_diagnostic.MA0005.severity = none
+dotnet_diagnostic.MA0006.severity = none
+dotnet_diagnostic.MA0007.severity = none
+dotnet_diagnostic.MA0008.severity = none
+dotnet_diagnostic.MA0009.severity = none
+dotnet_diagnostic.MA0010.severity = none
+dotnet_diagnostic.MA0011.severity = none
+dotnet_diagnostic.MA0012.severity = none
+dotnet_diagnostic.MA0013.severity = none
+dotnet_diagnostic.MA0014.severity = none
+dotnet_diagnostic.MA0015.severity = none
+dotnet_diagnostic.MA0016.severity = none
+dotnet_diagnostic.MA0017.severity = none
+dotnet_diagnostic.MA0018.severity = none
+dotnet_diagnostic.MA0019.severity = none
+dotnet_diagnostic.MA0020.severity = none
+dotnet_diagnostic.MA0021.severity = none
+dotnet_diagnostic.MA0022.severity = none
+dotnet_diagnostic.MA0023.severity = none
+dotnet_diagnostic.MA0024.severity = none
+dotnet_diagnostic.MA0025.severity = none
+dotnet_diagnostic.MA0026.severity = none
+dotnet_diagnostic.MA0027.severity = none
+dotnet_diagnostic.MA0028.severity = none
+dotnet_diagnostic.MA0029.severity = none
+dotnet_diagnostic.MA0020.severity = none
+dotnet_diagnostic.MA0030.severity = none
+dotnet_diagnostic.MA0031.severity = none
+dotnet_diagnostic.MA0032.severity = none
+dotnet_diagnostic.MA0033.severity = none
+dotnet_diagnostic.MA0034.severity = none
+dotnet_diagnostic.MA0035.severity = none
+dotnet_diagnostic.MA0036.severity = none
+dotnet_diagnostic.MA0037.severity = none
+dotnet_diagnostic.MA0038.severity = none
+dotnet_diagnostic.MA0039.severity = none
+dotnet_diagnostic.MA0040.severity = none
+dotnet_diagnostic.MA0041.severity = none
+dotnet_diagnostic.MA0042.severity = none
+dotnet_diagnostic.MA0043.severity = none
+dotnet_diagnostic.MA0044.severity = none
+dotnet_diagnostic.MA0045.severity = none
+dotnet_diagnostic.MA0046.severity = none
+dotnet_diagnostic.MA0047.severity = none
+dotnet_diagnostic.MA0048.severity = none
+dotnet_diagnostic.MA0049.severity = none
+dotnet_diagnostic.MA0050.severity = none
+dotnet_diagnostic.MA0051.severity = none
+dotnet_diagnostic.MA0052.severity = none
+dotnet_diagnostic.MA0053.severity = none
+dotnet_diagnostic.MA0054.severity = none
+dotnet_diagnostic.MA0055.severity = none
+dotnet_diagnostic.MA0056.severity = none
+dotnet_diagnostic.MA0057.severity = none
+dotnet_diagnostic.MA0058.severity = none
+dotnet_diagnostic.MA0059.severity = none
+dotnet_diagnostic.MA0060.severity = none
+dotnet_diagnostic.MA0061.severity = none
+dotnet_diagnostic.MA0062.severity = none
+dotnet_diagnostic.MA0063.severity = none
+dotnet_diagnostic.MA0064.severity = none
+dotnet_diagnostic.MA0065.severity = none
+dotnet_diagnostic.MA0066.severity = none
+dotnet_diagnostic.MA0067.severity = none
+dotnet_diagnostic.MA0068.severity = none
+dotnet_diagnostic.MA0069.severity = none
+dotnet_diagnostic.MA0070.severity = none
+dotnet_diagnostic.MA0071.severity = none
+dotnet_diagnostic.MA0072.severity = none
+dotnet_diagnostic.MA0073.severity = none
+dotnet_diagnostic.MA0074.severity = none
+dotnet_diagnostic.MA0075.severity = none
+dotnet_diagnostic.MA0076.severity = none
+dotnet_diagnostic.MA0077.severity = none
+dotnet_diagnostic.MA0078.severity = none
+dotnet_diagnostic.MA0079.severity = none
+dotnet_diagnostic.MA0080.severity = none
+dotnet_diagnostic.MA0081.severity = none
+dotnet_diagnostic.MA0082.severity = none
+dotnet_diagnostic.MA0083.severity = none
+dotnet_diagnostic.MA0084.severity = none
+dotnet_diagnostic.MA0085.severity = none
+dotnet_diagnostic.MA0086.severity = none
+dotnet_diagnostic.MA0087.severity = none
+dotnet_diagnostic.MA0088.severity = none
+dotnet_diagnostic.MA0089.severity = none
+dotnet_diagnostic.MA0090.severity = none
+dotnet_diagnostic.MA0091.severity = none
+dotnet_diagnostic.MA0092.severity = none
+dotnet_diagnostic.MA0093.severity = none
+dotnet_diagnostic.MA0094.severity = none
+dotnet_diagnostic.MA0095.severity = none
+dotnet_diagnostic.MA0096.severity = none
+dotnet_diagnostic.MA0097.severity = none
+dotnet_diagnostic.MA0098.severity = none
+dotnet_diagnostic.MA0099.severity = none
+dotnet_diagnostic.MA0100.severity = none
+dotnet_diagnostic.MA0101.severity = none
+dotnet_diagnostic.MA0102.severity = none
+dotnet_diagnostic.MA0103.severity = none
+dotnet_diagnostic.MA0104.severity = none
+dotnet_diagnostic.MA0105.severity = none
+dotnet_diagnostic.MA0106.severity = none
+dotnet_diagnostic.MA0107.severity = none
+dotnet_diagnostic.MA0108.severity = none
+dotnet_diagnostic.MA0109.severity = none
+dotnet_diagnostic.MA0110.severity = none
+dotnet_diagnostic.MA0111.severity = none
+dotnet_diagnostic.MA0112.severity = none
+dotnet_diagnostic.MA0113.severity = none
+dotnet_diagnostic.MA0114.severity = none
+dotnet_diagnostic.MA0115.severity = error
+dotnet_diagnostic.MA0116.severity = error
+dotnet_diagnostic.MA0117.severity = error
+dotnet_diagnostic.MA0118.severity = error
+dotnet_diagnostic.MA0119.severity = none
+dotnet_diagnostic.MA0120.severity = error
+dotnet_diagnostic.MA0121.severity = none
+dotnet_diagnostic.MA0122.severity = error
+dotnet_diagnostic.MA0123.severity = error
+dotnet_diagnostic.MA0124.severity = none
+dotnet_diagnostic.MA0125.severity = none
+dotnet_diagnostic.MA0126.severity = none
+dotnet_diagnostic.MA0127.severity = none
+dotnet_diagnostic.MA0128.severity = none
+dotnet_diagnostic.MA0129.severity = none
+dotnet_diagnostic.MA0130.severity = none
+dotnet_diagnostic.MA0131.severity = none
+dotnet_diagnostic.MA0132.severity = none
+dotnet_diagnostic.MA0133.severity = none
+dotnet_diagnostic.MA0134.severity = none
+dotnet_diagnostic.MA0135.severity = none
+dotnet_diagnostic.MA0136.severity = none
+dotnet_diagnostic.MA0137.severity = none
+dotnet_diagnostic.MA0138.severity = none
+dotnet_diagnostic.MA0139.severity = none
+dotnet_diagnostic.MA0140.severity = none
+dotnet_diagnostic.MA0141.severity = none
+dotnet_diagnostic.MA0142.severity = none
+dotnet_diagnostic.MA0143.severity = none
+dotnet_diagnostic.MA0144.severity = none
+dotnet_diagnostic.MA0145.severity = none
+dotnet_diagnostic.MA0146.severity = none
+dotnet_diagnostic.MA0147.severity = none
+dotnet_diagnostic.MA0148.severity = none
+dotnet_diagnostic.MA0149.severity = none
+dotnet_diagnostic.MA0150.severity = none
+dotnet_diagnostic.MA0151.severity = none
+dotnet_diagnostic.MA0152.severity = none
+dotnet_diagnostic.MA0153.severity = none
+dotnet_diagnostic.MA0154.severity = none
+dotnet_diagnostic.MA0155.severity = none
+dotnet_diagnostic.MA0156.severity = none
+dotnet_diagnostic.MA0157.severity = none
+dotnet_diagnostic.MA0158.severity = none
+dotnet_diagnostic.MA0159.severity = none
+
+[*.razor]
+# workaround Rider issue breaking formatting https://youtrack.jetbrains.com/issue/RSRP-491987
+place_simple_anonymousmethod_on_single_line = true
+html_space_inside_empty_tag = true
+
+[*.csproj]
+xml_space_inside_empty_tag = true
