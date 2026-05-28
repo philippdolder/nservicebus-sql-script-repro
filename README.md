@@ -2,8 +2,8 @@
 Minimal reproduction to demonstrate mixed line breaks in NServiceBus generated SQL scripts.
 
 ## Prerequisites
-Linux machine to see the problem in action.
-.NET 10.0.203 SDK. See `global.json`
+- Linux machine to see the problem in action.
+- .NET 10.0.203 SDK. See `global.json`
 
 ## Interesting bits
 The `Assembly.cs` defines the script generation configuration.
